@@ -31,6 +31,52 @@
 -  Flutter uses Dart which runs in 2 modes (debug and release) (JIT and AOT)
     * In debug mode you get hot reload which allows you to hot swap code running on the device while maintaining state
     * In release mode it will compile to machine code and use tree shaking to be as small as possible.
+
+* Flutter doesn’t use OEM widgets  so it allows you to truly make your own brand and not just rely on material design and cupertino style themes
+* You can make high quality apps that feel right at home on android and ios
+
+-->
+
+---
+
+# Stateful Widget
+
+``` dart
+class FavoriteWidget extends StatefulWidget {
+  @override
+  _FavoriteWidgetState createState() => _FavoriteWidgetState();
+}
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  bool _isFavorited = true;
+  int _favoriteCount = 41;
+  // ···
+}
+```
+
+<!--
+- Flutter is made up of widget and everything is a widget.
+	* Show Flutter layers
+	* There are statelesswidget and statefulwidget that are the two main widgets you use
+		* Stateless will rebuild every-time the data changes
+		* Stateful will hold state and only rebuild when you call setstate 
+-->
+--- 
+
+# Stateless Widget
+
+``` dart
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+```
+
+<!-- 
+- Rebuilds Automatically 
 -->
 
 ---
@@ -65,54 +111,6 @@
 
 ---
 
-# Stateful Widget
-
-``` dart
-class FavoriteWidget extends StatefulWidget {
-  @override
-  _FavoriteWidgetState createState() => _FavoriteWidgetState();
-}
-class _FavoriteWidgetState extends State<FavoriteWidget> {
-  bool _isFavorited = true;
-  int _favoriteCount = 41;
-  // ···
-}
-```
-
---- 
-
-# Stateless Widget
-
-``` dart
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter Demo'),
-        ),
-        body: Center(
-          child: TapboxA(),
-        ),
-      ),
-    );
-  }
-}
-
-```
-
-<!-- 
-- Rebuilds Automatically 
--->
-
----
-
-
---- 
-
 # Set State
 
 ## Out of the Box
@@ -138,24 +136,26 @@ Text('$_counter'),
 - Logic with the View
 - Hard to Scale -->
 
+---
 
+![](https://github.com/AppleEducate/flutter_hackathon_19/blob/master/assets/slide_images/dart_pub.png?raw=true){.background}
 
-<!--
-* Flutter is made up of widget and everything is a widget.
-	* Show Flutter layers
-	* There are statelesswidget and statefulwidget that are the two main widgets you use
-		* Stateless will rebuild every-time the data changes
-		* Stateful will hold state and only rebuild when you call setstate
-* Flutter doesn’t use OEM widgets  so it allows you to truly make your own brand and not just rely on material design and cupertino style themes
-	* You can make high quality apps that feel right at home on android and ios
+---
+
+# Provider
+
+## Recommended by Flutter Team
+
+- Seperate Buisness Logic
+- Rebuild on changes
+- Scoped Model
+
+<!-- 
 * Flutter has a really strong and vibrant community and is open sourced
 	* There is a place called dart pub where you upload packages and can download ones that others have created
 	* Packages can be pure dart or contain platform channels for ios and android to use native swift and kotlin
-* Since flutter was created with the modern mobile in mind, especially with how powerful phones have gotten, there are many options when it comes to state management
-	* Bloc - AngularDart and Flutter (Google)
-	* Provider - Community (Recommended) => Scoped Model
-	* Redux
-	* Other (Build your own)
+
+
 * Example (CRUD Application)
 	* Show Counter example
 	* Add Provider Package
@@ -164,11 +164,23 @@ Text('$_counter'),
 	* Build app with set setstate
 	* Add Change Notifer Class
 	* Migrate to provider
-	* Local Storage for Fun (Save to Disk, JSON)
-* Conclusion
-	* Flutter is very powerful and fun to use
-	* More time on the code and less boilderplate
-	* Self describing documentation (Keep going deeper)
-	* Examples Github
-	* Share example on github (Branches for setState and provider)
-	* Any Questions? -->
+	* Local Storage for Fun (Save to Disk, JSON) 
+-->
+
+---
+
+# Conclusion
+
+- Twiter -> @RodyDavis
+- Github -> @AppleEducate
+- Website -> rodydavis.com
+
+
+<!--    
+* Flutter is very powerful and fun to use
+* More time on the code and less boilderplate
+* Self describing documentation (Keep going deeper)
+* Examples Github
+* Share example on github (Branches for setState and provider)
+* Any Questions?  
+-->
