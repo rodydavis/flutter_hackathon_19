@@ -1,4 +1,4 @@
- ---
+---
 
 # Flutter Task Manager
 
@@ -7,6 +7,9 @@
 <!--
 - Using Provider
 - About Me
+
+
+md2gslides slides.md
 -->
 
 ---
@@ -140,22 +143,61 @@ Text('$_counter'),
 
 ![](https://github.com/AppleEducate/flutter_hackathon_19/blob/master/assets/slide_images/dart_pub.png?raw=true){.background}
 
+<!-- 
+* Flutter has a really strong and vibrant community and is open sourced
+	* There is a place called dart pub where you upload packages and can download ones that others have created
+	* Packages can be pure dart or contain platform channels for ios and android to use native swift and kotlin -->
+
 ---
 
 # Provider
 
 ## Recommended by Flutter Team
 
-- Seperate Buisness Logic
+- Separate Business Logic
 - Rebuild on changes
 - Scoped Model
+- Created by Remi Rousselet
 
 <!-- 
-* Flutter has a really strong and vibrant community and is open sourced
-	* There is a place called dart pub where you upload packages and can download ones that others have created
-	* Packages can be pure dart or contain platform channels for ios and android to use native swift and kotlin
+Application from the community to provide a simple but powerful alternative
+-->
 
+---
 
+# Provider Example
+
+``` dart
+Provider<String>.value(
+  value: 'Hello World',
+  child: Consumer<String>(
+    builder: (context, value, child) => Text(value),
+  ),
+);
+```
+
+---
+
+# Multiple Models
+
+``` dart
+MultiProvider(
+  providers: [
+    Provider<Foo>.value(value: foo),
+    Provider<Bar>.value(value: bar),
+    Provider<Baz>.value(value: baz),
+  ],
+  child: someWidget,
+);
+```
+
+---
+
+# Demo {.big}
+
+TODO Application using Provider
+
+<!-- 
 * Example (CRUD Application)
 	* Show Counter example
 	* Add Provider Package
@@ -164,23 +206,24 @@ Text('$_counter'),
 	* Build app with set setstate
 	* Add Change Notifer Class
 	* Migrate to provider
-	* Local Storage for Fun (Save to Disk, JSON) 
+	* Local Storage for Fun (Save to Disk, JSON)  
 -->
 
 ---
 
 # Conclusion
 
-- Twiter -> @RodyDavis
+## Example: https://github.com/AppleEducate/flutter_hackathon_19
+
+- Twitter -> @RodyDavis
 - Github -> @AppleEducate
 - Website -> rodydavis.com
-
 
 <!--    
 * Flutter is very powerful and fun to use
 * More time on the code and less boilderplate
 * Self describing documentation (Keep going deeper)
-* Examples Github
+* Example on Github
 * Share example on github (Branches for setState and provider)
 * Any Questions?  
 -->
