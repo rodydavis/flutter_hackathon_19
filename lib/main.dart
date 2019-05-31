@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: ListenableProvider<AppState>(
-        builder: (_) => AppState(),
+        builder: (_) => AppState()..init(),
         child: HomeScreen(),
       ),
     );
