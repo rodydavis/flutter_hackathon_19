@@ -35,12 +35,112 @@
 
 ---
 
-# Widgets Everywhere
+![](https://github.com/AppleEducate/flutter_hackathon_19/blob/master/assets/slide_images/widgets.png?raw=true){.background}
 
-![](https://github.com/AppleEducate/flutter_hackathon_19/blob/master/assets/slide_images/widgets.png?raw=true)
+---
+
+# State Management
+
+- Bloc
+- Redux
+- Scoped Model
+- Provider
+- MobX
+- RxDart
+- setState
+- Custom
 
 <!-- 
 
+- There are so many options
+- All depends on the type of application
+- Combination (Provider and Bloc, Bloc and Reduc (ReBloc))
+
+* Since flutter was created with the modern mobile in mind, especially with how powerful phones have gotten, there are many options when it comes to state management
+	* Bloc - AngularDart and Flutter (Google)
+	* Provider - Community (Recommended) => Scoped Model
+	* Redux
+	* Other (Build your own) 
+-->
+
+---
+
+# Stateful Widget
+
+``` dart
+class FavoriteWidget extends StatefulWidget {
+  @override
+  _FavoriteWidgetState createState() => _FavoriteWidgetState();
+}
+class _FavoriteWidgetState extends State<FavoriteWidget> {
+  bool _isFavorited = true;
+  int _favoriteCount = 41;
+  // ···
+}
+```
+
+--- 
+
+# Stateless Widget
+
+``` dart
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Flutter Demo'),
+        ),
+        body: Center(
+          child: TapboxA(),
+        ),
+      ),
+    );
+  }
+}
+
+```
+
+<!-- 
+- Rebuilds Automatically 
+-->
+
+---
+
+
+--- 
+
+# Set State
+
+## Out of the Box
+
+``` dart
+// -- Default Value --
+int _counter = 0;
+
+
+// -- Update Value --
+void _incrementCounter() {
+  setState(() {
+    _counter++;
+  });
+}
+
+// -- Display Value --
+Text('$_counter'),
+```
+
+<!-- 
+- Simple Applications
+- Logic with the View
+- Hard to Scale -->
+
+
+
+<!--
 * Flutter is made up of widget and everything is a widget.
 	* Show Flutter layers
 	* There are statelesswidget and statefulwidget that are the two main widgets you use
