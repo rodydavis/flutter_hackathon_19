@@ -37,7 +37,7 @@
 
 # Widgets Everywhere
 
-![](/assets/slide_images/widgets.png)
+![](https://github.com/AppleEducate/flutter_hackathon_19/blob/master/assets/slide_images/widgets.png?raw=true)
 
 <!-- 
 
